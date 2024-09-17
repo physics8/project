@@ -1,0 +1,147 @@
+
+body{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+ 
+}
+.box{
+    
+    border-collapse: collapse;
+    border: 1px solid #000;
+
+}
+.square{
+    background-color: rgb(245, 152, 152);
+    padding: 65px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+input[type="file"] {
+    display: none;
+  }
+label {
+    padding: 30px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    margin: 2em;
+    border-radius: 10px;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-wrap: break-word;
+    background-color: #ffb300;
+    width: 1000px;
+    height: 740px;
+    padding: 40px;
+    text-align: center;
+  }
+  
+.wrapp{
+  text-align: center;
+}
+h1{
+  margin:0;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+  textarea[type="text"]  {
+    width: 80%;
+    height: 70%;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: #ffeb3b;
+    padding: 80px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  .btnWrap{
+    margin-left: 5em;
+  }
+  #saveButton {
+    background-color: #4CAF50; /* Зелений колір */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px; /* Додайте потрібний марджин зверху */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+  .exit-btn {
+    background-color: #ff2b2b; /* Зелений колір */
+    color: rgb(255, 255, 255);
+    padding: 20px 20px;
+    font-size: 16px;
+    margin-top: 20px; /* Додайте потрібний марджин зверху */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-right: 7em;
+    font-size: large;
+    font-weight: 800;
+  }
+  .open-btn{
+    background-color: #4CAF50; /* Зелений колір */
+    color: white;
+    padding: 20px 20px;
+    font-size: 16px;
+    margin-top: 20px; /* Додайте потрібний марджин зверху */
+    margin-left: 7em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: 800;
+  }
+  #myModal {
+    max-width: 800px; /* Adjust the maximum width as needed */
+    word-wrap: break-word;
+}
+
+.btn1{
+  background: greenyellow;
+  color: white;
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: 800;
+    margin-left: 3em;
+}
+.btn2{
+  background: rgb(255, 213, 5);
+  color: white;
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: larger;
+    font-weight: 800;
+    margin: 0 0.5em 0 0.5em;
+}
+.btn3{
+    background: red;
+    color: white;
+      padding: 5px 10px;
+      font-size: 13px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      font-size: larger;
+      font-weight: 800;
+  
+}

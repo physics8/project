@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapp">
+        <h1>Фізика - ТОП</h1>
+        <table class="box">
+            
+            <tr>
+                <td class="square color1" id="square_1"></td>
+                <td class="square color2" id="square_2"></td>
+                <td class="square color3" id="square_3"></td>
+                <td class="square color4" id="square_4"></td>
+                <td class="square color5" id="square_5"></td>
+                <td class="square color6" id="square_6"></td>
+                <td class="square color7" id="square_7"></td>
+                <td class="square color8" id="square_8"></td>
+                <td class="square color9" id="square_9"></td>
+                <td class="square color10" id="square_10"></td>
+            </tr>
+            <tr>
+                <td class="square color11" id="square_11"></td>
+                <td class="square color12" id="square_12"></td>
+                <td class="square color13" id="square_13"></td>
+                <td class="square color14" id="square_14"></td>
+                <td class="square color15" id="square_15"></td>
+                <td class="square color16" id="square_16"></td>
+                <td class="square color17" id="square_17"></td>
+                <td class="square color18" id="square_18"></td>
+                <td class="square color19" id="square_19"></td>
+                <td class="square color20" id="square_20"></td>
+            </tr>
+            <tr>
+                <td class="square color21" id="square_21"></td>
+                <td class="square color22" id="square_22"></td>
+                <td class="square color23" id="square_23"></td>
+                <td class="square color24" id="square_24"></td>
+                <td class="square color25" id="square_25"></td>
+                <td class="square color26" id="square_26"></td>
+                <td class="square color27" id="square_27"></td>
+                <td class="square color28" id="square_28"></td>
+                <td class="square color29" id="square_29"></td>
+                <td class="square color30" id="square_30"></td>
+            </tr>
+            <tr>
+                <td class="square color31" id="square_31"></td>
+                <td class="square color32" id="square_32"></td>
+                <td class="square color33" id="square_33"></td>
+                <td class="square color34" id="square_34"></td>
+                <td class="square color35" id="square_35"></td>
+                <td class="square color36" id="square_36"></td>
+                <td class="square color37" id="square_37"></td>
+                <td class="square color38" id="square_38"></td>
+                <td class="square color39" id="square_39"></td>
+                <td class="square color40" id="square_40"></td>
+            </tr>
+            <tr>
+                <td class="square color41" id="square_41"></td>
+                <td class="square color42" id="square_42"></td>
+                <td class="square color43" id="square_43"></td>
+                <td class="square color44" id="square_44"></td>
+                <td class="square color45" id="square_45"></td>
+                <td class="square color46" id="square_46"></td>
+                <td class="square color47" id="square_47"></td>
+                <td class="square color48" id="square_48"></td>
+                <td class="square color49" id="square_49"></td>
+                <td class="square color50" id="square_50"></td>
+            </tr>
+            <tr>
+                <td class="square color51" id="square_51"></td>
+                <td class="square color52" id="square_52"></td>
+                <td class="square color53" id="square_53"></td>
+                <td class="square color54" id="square_54"></td>
+                <td class="square color55" id="square_55"></td>
+                <td class="square color56" id="square_56"></td>
+                <td class="square color57" id="square_57"></td>
+                <td class="square color58" id="square_58"></td>
+                <td class="square color59" id="square_59"></td>
+                <td class="square color60" id="square_60"></td>
+
+            </tr>
+            <tr >
+                <td class="square color61" id="square_61"></td>
+                <td class="square color62" id="square_62"></td>
+                <td class="square color63" id="square_63"></td>
+                <td class="square color64" id="square_64"></td>
+                <td class="square color65" id="square_65"></td>
+                <td class="square color66" id="square_66"></td>
+                <td class="square color67" id="square_67"></td>
+                <td class="square color68" id="square_68"></td>
+                <td class="square color69" id="square_69"></td>
+                <td class="square color70" id="square_70"></td>
+
+            </tr>
+
+        </table>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" onchange="changeBackground(event)">
+  <label for="fileInput">Поміняти картинку</label>
+  <script>
+    function changeBackground(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.querySelector('.box').style.backgroundImage = `url('${e.target.result}')`;
+        };
+        reader.readAsDataURL(file);
+    }
+}
+  </script>
+ <div class="modal" id="myModal">
+    <textarea type="text" id="textInput" placeholder="Введіть текст"></textarea>
+    <!-- <input type="text" id="textInput" placeholder="Введіть текст"> -->
+    <div class="btnWrap">
+        <button class="exit-btn" onclick="closeDropdown()">×</button>
+        <button id="saveButton" onclick="saveText()">Зберегти</button>
+        <button class="open-btn" onclick="makeTransparent()">✔</button>
+        <button class="btn1" onclick="btnEasy()" >1</button>
+        <button class="btn2" onclick="btnMedium()">2</button>
+        <button class="btn3" onclick="btnHard()">3</button>
+    </div>
+
+  </div>
+
+  <script>
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square, index) => {
+      square.addEventListener('click', () => openModal(index + 1));
+    });
+    const btn1 = document.querySelector('.btn1');
+    const btn2 = document.querySelector('.btn2');
+    const btn3 = document.querySelector('.btn3');
+    const table = document.querySelector('table');
+
+    // Додаємо обробник події для наведення курсору на кнопку
+    btn1.addEventListener('mouseover', function() {
+        // Змінюємо стиль таблиці для зміни прозорості
+        table.style.opacity = '0.5'; 
+        document.getElementById('myModal').style.opacity = '0.5';
+    });
+    btn2.addEventListener('mouseover', function() {
+        // Змінюємо стиль таблиці для зміни прозорості
+        table.style.opacity = '0.5'; 
+        document.getElementById('myModal').style.opacity = '0.5';
+    });
+    btn3.addEventListener('mouseover', function() {
+        // Змінюємо стиль таблиці для зміни прозорості
+        table.style.opacity = '0.5'; 
+        document.getElementById('myModal').style.opacity = '0.5';
+    });
+
+    // Додаємо обробник події для виходу курсору за межі кнопки
+    btn1.addEventListener('mouseout', function() {
+        // Повертаємо стиль таблиці до звичайного стану
+        table.style.opacity = '1';
+        document.getElementById('myModal').style.opacity = '1';
+    });
+    btn2.addEventListener('mouseout', function() {
+        // Повертаємо стиль таблиці до звичайного стану
+        table.style.opacity = '1';
+        document.getElementById('myModal').style.opacity = '1';
+    });
+    btn3.addEventListener('mouseout', function() {
+        // Повертаємо стиль таблиці до звичайного стану
+        table.style.opacity = '1';
+        document.getElementById('myModal').style.opacity = '1';
+    });
+
+    function saveText() {
+    const inputText = document.getElementById('textInput').value;
+    const squareNumber = document.getElementById('saveButton').getAttribute('data-square');
+    
+    // Створити папку
+    const folderName = `square_folder_${squareNumber}`;
+    const folderBlob = new Blob([], { type: 'application/octet-stream' });
+    const folderA = document.createElement('a');
+    folderA.href = URL.createObjectURL(folderBlob);
+    folderA.download = folderName;
+    document.body.appendChild(folderA);
+    folderA.click();
+    document.body.removeChild(folderA);
+
+    // Створити та завантажити текстовий файл у папку
+    const blob = new Blob([inputText], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${folderName}/square_${squareNumber}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    document.getElementById('myModal').style.display = 'none';
+    displayText(squareNumber);
+}
+function btnHard(){
+    const squareNumber = document.getElementById('saveButton').getAttribute('data-square');
+    const square = document.getElementById(`square_${squareNumber}`);
+    square.style.background = 'red';
+    // document.getElementById('myModal').style.display = 'none';
+ 
+}
+function btnMedium(){
+    const squareNumber = document.getElementById('saveButton').getAttribute('data-square');
+    const square = document.getElementById(`square_${squareNumber}`);
+    square.style.background = 'yellow';
+    // document.getElementById('myModal').style.display = 'none';
+ 
+}
+function btnEasy(){
+    const squareNumber = document.getElementById('saveButton').getAttribute('data-square');
+    const square = document.getElementById(`square_${squareNumber}`);
+    square.style.background = 'greenyellow';
+    // document.getElementById('myModal').style.display = 'none';
+ 
+}
+    function readText(squareNumber) {
+      // Додайте цей фрагмент для читання тексту з файлу
+      const storedText = localStorage.getItem(`square_${squareNumber}`);
+      if (storedText) {
+        document.getElementById('textInput').value = storedText;
+      }
+    }
+
+    function displayText(squareNumber) {
+      const inputText = document.getElementById('textInput').value;
+      localStorage.setItem(`square_${squareNumber}`, inputText);
+    //   document.querySelector(`#square_${squareNumber}`).innerText = inputText;
+    }
+    function closeDropdown() {
+        document.getElementById('myModal').style.display = 'none';
+      displayText(squareNumber);
+    }
+    function makeTransparent() {
+    const squareNumber = document.getElementById('saveButton').getAttribute('data-square');
+    const square = document.getElementById(`square_${squareNumber}`);
+    square.style.background = 'transparent';
+    square.style.border = 'transparent';
+    document.getElementById('myModal').style.display = 'none';
+}
+
+// Add the id attribute to each square in your HTML, for example:
+// <td class="square" id="square_1"></td>
+
+// Modify the event listener:
+squares.forEach((square, index) => {
+    square.addEventListener('click', () => openModal(index + 1, `square_${index + 1}`));
+});
+
+// Update the openModal() function to take the square id:
+function openModal(squareNumber, squareId) {
+    document.getElementById('myModal').style.display = 'block';
+    document.getElementById('saveButton').setAttribute('data-square', squareNumber);
+    document.getElementById('saveButton').setAttribute('data-square-id', squareId);
+    readText(squareNumber);
+}
+
+  </script>
+
+</body>
+</html>
